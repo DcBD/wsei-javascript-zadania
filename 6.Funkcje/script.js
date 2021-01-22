@@ -19,3 +19,8 @@ const zadanie4 = (paramString) => {
 
     }, 3000);
 }
+
+zadanie1();
+zadanie2();
+zadanie3();
+zadanie4();
