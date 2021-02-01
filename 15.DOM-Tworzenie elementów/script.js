@@ -1,11 +1,9 @@
-function createNewElement(tag)
-{
+function createNewElement(tag) {
     return document.createElement(tag);
 }
 
 // #1
-function task1()
-{
+function task1() {
     let root = document.getElementById("root");
     let newElement = createNewElement("div");
     newElement.innerHTML = "To jest nowy element";
@@ -14,8 +12,7 @@ function task1()
 }
 
 // #2
-function task2()
-{
+function task2() {
     let ul = createNewElement("ol");
     ul.classList = "task2Ul";
     let fruits = ["Jabłko", "Ananas", "Banan", "Pomarańcza", "Śliwka", "Hurma", "Mango"]
@@ -31,41 +28,36 @@ function task2()
 }
 
 // #3
-function task3()
-{
+function task3() {
     let ul = document.getElementsByClassName('task2Ul')[0];
     let elements = ul.querySelectorAll("li");
 
-    for(let i = 1; i < elements.length; i += 2)
-    {
+    for (let i = 1; i < elements.length; i += 2) {
         elements[i].remove();
     }
 }
 
 // #4
-function task4()
-{
+function task4() {
     let root = document.getElementById("root");
     let btn = createNewElement("button");
     btn.innerHTML = "Usuń ten przycisk";
 
-    btn.addEventListener("click", function(){ 
+    btn.addEventListener("click", function () {
         btn.remove();
     });
-    
+
     root.appendChild(btn);
 }
 
 // #5
-function task5()
-{
+function task5() {
     let min = 4;
     let max = 20;
     let root = document.getElementById("root");
     let randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
 
-    for(let i = 1; i <= randomNumber; i++)
-    {
+    for (let i = 1; i <= randomNumber; i++) {
         let newElement = createNewElement("div");
         newElement.innerHTML = `to jest div numer ${i}`;
         root.appendChild(newElement);
@@ -73,8 +65,7 @@ function task5()
 }
 
 // #6
-function task6()
-{
+function task6() {
     let myObject = {
         div1: 'to jest div',
         span1: 'to jest span',
@@ -85,7 +76,7 @@ function task6()
     };
 
     let root = document.getElementById("root");
-   
+
     let div1 = createNewElement("div");
     div1.innerHTML = "to jest div";
     let span1 = createNewElement("span");
@@ -98,27 +89,25 @@ function task6()
 
     root.appendChild(div1);
     root.appendChild(span1);
-    
+
     div2.appendChild(div3);
     root.appendChild(div2);
     root.appendChild(span2);
 }
 
 // #7
-class Container 
-{
+class Container {
     firstList = ["Ananas", "Mleko", "Chleb", "Makaron", "Mydło", "Pomidory"];
     secondList = [];
-    
+
     firstListContainer = null;
     secondListContainer = null;
 
     firstButton = null;
     secondButton = null;
 
-    renderFirstList()
-    {
-        if(this.firstListContainer == null)
+    renderFirstList() {
+        if (this.firstListContainer == null)
             return;
 
         this.firstListContainer.innerHTML = "";
@@ -130,11 +119,10 @@ class Container
         });
     }
 
-    renderSecondList()
-    {
-        if(this.secondListContainer == null)
+    renderSecondList() {
+        if (this.secondListContainer == null)
             return;
-        
+
         this.secondListContainer.innerHTML = "";
 
         this.secondList.forEach(name => {
@@ -144,9 +132,8 @@ class Container
         });
     }
 
-    switchToFirstList()
-    {
-        if(this.secondList.length == 0)
+    switchToFirstList() {
+        if (this.secondList.length == 0)
             return;
 
         let ele = this.secondList.pop();
@@ -154,9 +141,8 @@ class Container
         this.refreshState();
     }
 
-    switchToSecondList()
-    {
-        if(this.firstList.length == 0)
+    switchToSecondList() {
+        if (this.firstList.length == 0)
             return;
 
         let ele = this.firstList.pop();
@@ -164,13 +150,12 @@ class Container
         this.refreshState();
     }
 
-    refreshState()
-    {
-        if(this.firstList.length == 0) {
+    refreshState() {
+        if (this.firstList.length == 0) {
             this.firstButton.disabled = true;
         } else this.firstButton.disabled = false;
 
-        if(this.secondList.length == 0) {
+        if (this.secondList.length == 0) {
             this.secondButton.disabled = true;
         } else this.secondButton.disabled = false;
 
@@ -179,8 +164,7 @@ class Container
     }
 }
 
-function task7()
-{
+function task7() {
     let root = document.getElementById("root");
 
     let ol1 = createNewElement("ol");
@@ -222,8 +206,7 @@ function task7()
 }
 
 // #8
-function task8()
-{
+function task8() {
     let root = document.getElementById("root");
 
     let btn = createNewElement("button");
@@ -248,14 +231,12 @@ function task8()
     root.appendChild(form);
     root.append(btn);
 
-    btn.addEventListener("click", function ()
-    {
+    btn.addEventListener("click", function () {
         let count = inputCount.value;
-        if(isNaN(count) || count < 1)
+        if (isNaN(count) || count < 1)
             return;
 
-        for(let i = 0; i < count; i++)
-        {
+        for (let i = 0; i < count; i++) {
             let newElement = createNewElement(inputElement.value);
             newElement.innerHTML = inputText.value;
             newElement.style.color = inputColor.value;
@@ -265,92 +246,117 @@ function task8()
 }
 
 // #9
-function task9()
-{
-    // let root = document.getElementById("root");
+function task9() {
 
-    // let storage = [];
+    // zadanie9
+    const arrHeaders = ['Name', 'Surname', 'Age', 'Childrens'];
+    const form = document.createElement('form');
+    const createButton = document.createElement('button');
+    const moreButton = document.createElement('button');
+    const deleteButton = document.createElement('button');
 
-    // let form = createNewElement("div");
-    // let inpName = createNewElement("input");
-    // inpName.placeholder = "Imię";
-    // let inpLastName = createNewElement("input");
-    // inpLastName.placeholder = "Nazwisko";
-    // let inpAge = createNewElement("input");
-    // inpAge.placeholder = "Wiek";
-    // let inpChildrenCount = createNewElement("input");
-    // inpChildrenCount.placeholder = "Ilość dzieci";
+    createButton.textContent = 'Create table';
+    moreButton.textContent = 'More rows';
+    deleteButton.textContent = 'Delete';
 
-    // form.appendChild(inpName);
-    // form.appendChild(inpLastName);
-    // form.appendChild(inpAge);
-    // form.appendChild(inpChildrenCount);
+    form.appendChild(createFields(arrHeaders));
+    form.appendChild(moreButton);
+    form.appendChild(createButton);
 
-    // let table = createNewElement("table");
-    // let tr = createNewElement("tr");
-    // let thName = createNewElement("th");
-    // thName.innerHTML = "Imię";
-    // let thLastName = createNewElement("th");
-    // thLastName.innerHTML = "Nazwisko";
-    // let thAge = createNewElement("th");
-    // thAge.innerHTML = "Wiek";
-    // let thChildrenCount = createNewElement("th");
-    // thChildrenCount.innerHTML = "Ilość dzieci";
-    // tr.appendChild(thName);
-    // tr.appendChild(thLastName);
-    // tr.appendChild(thAge);
-    // tr.appendChild(thChildrenCount);
-    
-    // let tHead = createNewElement("thead");
-    // tHead.appendChild(tr);
-    // table.appendChild(tHead);
+    moreButton.addEventListener('click', () => {
+        const addRows = document.querySelectorAll('.more-rows');
+        const lastRow = addRows[addRows.length - 1];
+        lastRow.after(createFields(arrHeaders));
+    });
 
-    // let btnCreate = createNewElement("button");
-    // btnCreate.innerHTML = "Utwórz";
-    // let btnMore = createNewElement("button");
-    // btnMore.innerHTML = "Więcej";
+    form.addEventListener('submit', createTable);
 
-    // root.appendChild(form);
-    // root.appendChild(btnCreate);
-    // root.appendChild(btnMore);
+    function createFields(el) {
+        let fieldsRow = document.createElement('div');
+        fieldsRow.className = 'more-rows';
+        el.forEach((value) => {
+            const field = document.createElement('input');
+            field.placeholder = value;
+            fieldsRow.appendChild(field);
+        });
+        return fieldsRow;
+    }
 
-    // function createNew()
-    // {
-    //     storage[i] = 1;
-    // }
+    function createTable(e) {
+        e.preventDefault();
 
-    // btnCreate
+        const defaultTable = document.getElementById('def-table');
+
+        if (defaultTable) {
+            defaultTable.remove();
+        }
+
+        const table = document.createElement('table');
+        const tbody = document.createElement('tbody');
+        const thead = document.createElement('thead');
+        const rows = document.querySelectorAll('.more-rows');
+
+        arrHeaders.forEach((header) => {
+            const th = document.createElement('th');
+            th.textContent = header;
+            thead.appendChild(th);
+        });
+
+        rows.forEach((row) => {
+            const tr = document.createElement('tr');
+            const children = Array.from(row.children);
+            const values = children.map((child) => child.value);
+            values.forEach((value) => {
+                const td = document.createElement('td');
+                td.textContent = value;
+                tr.appendChild(td);
+            });
+            tbody.appendChild(tr);
+        });
+
+        table.id = 'def-table';
+        table.appendChild(thead);
+        table.appendChild(tbody);
+
+        createButton.after(table);
+
+        form.reset();
+    }
+    document.getElementById('root').appendChild(form);
 
 }
 
-function task10()
-{
-
+function task10() {
+    const creatorFields = document.querySelectorAll('.more-rows input');
+    creatorFields.forEach((field) => {
+      field.addEventListener('input', (event) => {
+        const formattedText =
+          field.value.charAt(0).toUpperCase() + field.value.slice(1);
+        event.target.value = formattedText;
+      });
+    });
 }
 
 // #11
-function task11()
-{
+function task11() {
     let root = document.getElementById("root");
     let isNumber = (str) => /^\d+$/.test(str);
 
-    function countNumbers(str)
-    {
+    function countNumbers(str) {
         let count = 0;
-        for(let i = 0; i < str.length; i++) {
-            if(isNumber(str[i]))
+        for (let i = 0; i < str.length; i++) {
+            if (isNumber(str[i]))
                 count++;
         }
 
         return count;
     }
 
-    function someString(str)
-    {
+    function someString(str) {
         let count = countNumbers(str);
         console.log(`11) Suma liczb to: ${count}`)
-        
-        for(let i = 0; i < count; i++) {
+
+        for (let i = 0; i < count; i++) {
             let newElement = createNewElement("div");
             newElement.innerHTML = str;
             root.appendChild(newElement);
@@ -362,18 +368,15 @@ function task11()
 }
 
 // #12
-function task12()
-{
+function task12() {
     let myObj = {
         name: ""
     };
 
-    function someString(str)
-    {
+    function someString(str) {
         myObj.name = str;
 
-        if(str.includes("Ala"))
-        {
+        if (str.includes("Ala")) {
             myObj.name = str.replace("Ala", "Ola");
             console.log(`12) ${myObj.name}`)
         } else {
@@ -389,18 +392,16 @@ function task12()
 }
 
 // #13
-function task13()
-{
+function task13() {
     let isLetter = (str) => str.length === 1 && str.match(/[a-z]/i);
     let isNumber = (str) => /^\d+$/.test(str);
 
-    function newTable(strings)
-    {
+    function newTable(strings) {
         let storage = [];
         strings.forEach(string => {
-            for(let i = 0; i < string.length; i++) {
-                if(isLetter(string[i])) {
-                    if(string[i] in storage) {
+            for (let i = 0; i < string.length; i++) {
+                if (isLetter(string[i])) {
+                    if (string[i] in storage) {
                         storage[string[i]] += 1;
                     } else {
                         storage[string[i]] = 1;
@@ -412,12 +413,11 @@ function task13()
         return storage;
     }
 
-    function sum(strings)
-    {
+    function sum(strings) {
         let sum = 0;
         strings.forEach(string => {
-            for(let i = 0; i < string.length; i++) {
-                if(isNumber(string[i])) {
+            for (let i = 0; i < string.length; i++) {
+                if (isNumber(string[i])) {
                     sum += Number.parseInt(string[i]);
                 }
             }
@@ -426,14 +426,13 @@ function task13()
         return sum;
     }
 
-    function avg(strings)
-    {
+    function avg(strings) {
         let sum = 0;
         let count = 0;
         strings.forEach(string => {
-            for(let i = 0; i < string.length; i++) {
-                if(isNumber(string[i])) {
-                    count ++;
+            for (let i = 0; i < string.length; i++) {
+                if (isNumber(string[i])) {
+                    count++;
                     sum += Number.parseInt(string[i]);
                 }
             }
@@ -449,8 +448,7 @@ function task13()
 }
 
 // #14
-function task14()
-{
+function task14() {
     var myObj = {
         name: '',
         surname: '',
@@ -459,30 +457,27 @@ function task14()
 
     var copy = Object.assign({}, myObj);
 
-    function newValues(name, surname, age)
-    {
+    function newValues(name, surname, age) {
         myObj.name = name;
         myObj.surname = surname;
         myObj.age = age;
-        
+
         //
 
-        function addField(attr, char)
-        {
+        function addField(attr, char) {
             let s = "";
-            for(let i = 0; i < name.length; i++) {
+            for (let i = 0; i < name.length; i++) {
                 s += char;
             }
             myObj[s] = attr;
         }
-        
+
         addField(name, "n");
         addField(surname, "s");
         addField(age, "a");
 
 
-        if(name.length > 5 || surname.length > 5 || age.length > 5)
-        {
+        if (name.length > 5 || surname.length > 5 || age.length > 5) {
             console.log(myObj);
 
             let root = document.getElementById("root");
@@ -490,7 +485,7 @@ function task14()
             button.innerHTML = "Wróć do stanu początkowego";
             root.appendChild(button);
 
-            button.addEventListener("click", function() {
+            button.addEventListener("click", function () {
                 myObj = copy;
                 console.log(myObj);
             });

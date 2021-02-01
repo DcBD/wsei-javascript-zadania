@@ -78,12 +78,39 @@ for (var i = 1; i <= 5; i++) {
     console.log(str);
 }
 
+
+
 // 8 b)
+
+
+for (let i = 1; i <= 5; i++) {
+    let lineToPrint = "";
+    for (let j = 5 - i; j > 0; j--) {
+        lineToPrint += " ";
+    }
+    for (let j = i * 2 - 1; j > 0; j--) {
+      	if(j % 2)
+        lineToPrint += "*";
+      	else lineToPrint += " ";
+    }
+    console.log(lineToPrint);
+}
 
 // 8 c)
 
-// var treeFull = 9;
-// var half = Math.floor(treeFull / 2);
+for (let i = 1; i <= 5; i++) {
+    let lineToPrint = "";
+    for (let j = 5 - i; j > 0; j--) {
+        lineToPrint += " ";
+    }
+    for (let j = i * 2 - 1; j > 0; j--) {
+        lineToPrint += "*";
+    }
+    console.log(lineToPrint);
+}
+
+
+
 
 // 8 d)
 
@@ -124,3 +151,20 @@ for (var i = 0; i < c; i++) {
 }
 
 // #8 e)
+
+for (let i = 1; i <= 5; i++) {
+    let lineToPrint = "";
+    for (let j = 5 - i; j > 0; j--) {
+        lineToPrint += " ";
+    }
+    for (let j = i * 2 - 1; j > 0; j--) {
+      	if(j % 2)
+        lineToPrint += "*";
+      	else lineToPrint += " ";
+    }
+    console.log(lineToPrint);
+}
+
+for(let k = 0; k < 3; k++){
+  console.log("    *");
+}
